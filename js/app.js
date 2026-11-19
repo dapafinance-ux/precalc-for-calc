@@ -102,7 +102,7 @@
           else prev.textContent = '= ' + U.num(MathParse.evaluate(v), 5);
         } catch (e) { prev.textContent = '…'; }
       });
-      inp.addEventListener('keydown', (e) => { if (e.key === 'Enter') onEnter(); });
+      inp.addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); onEnter(); } });
       return { inp, prev };
     };
     if (p.type === 'mc') {
